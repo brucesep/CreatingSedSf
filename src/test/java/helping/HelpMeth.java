@@ -27,11 +27,16 @@ public class HelpMeth {
         $(new Selectors.ByText("OK")).click();
     }
 
+    public static void logOut(){
+        $(new Selectors.ByText("Выход")).click();
+        $(new Selectors.ByText("OK")).click();
+    }
+
     public static int randomCount(){
         int max = 999;
         int min = 100;
         max -=min;
-        return (int) (Math.random() * ++max) + min
+        return (int) (Math.random() * ++max) + min;
     }
 
 

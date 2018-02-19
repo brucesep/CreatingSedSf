@@ -24,18 +24,18 @@ public class Creating {
     }
 
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void createSChfMin() {
         PageObjMane.schfCreat(1, 1);
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void createSChfMax() {
         PageObjMane.schfCreat(2, 1);
     }
 
     @AfterTest
     public void tearDown() {
-
+        HelpMeth.logOut();
     }
 }

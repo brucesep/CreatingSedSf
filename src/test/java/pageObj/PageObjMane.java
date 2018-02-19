@@ -26,29 +26,26 @@ public class PageObjMane {
             case 1:
                 switch (function) {
                     case 1:
-                        PajeObjSchf.fillSchfMin(1);
+                        PajeObjSchf.fillSchf(1, 1);
                         break;
                     case 2:
-                        PajeObjSchf.fillSchfMin(2);
+                        PajeObjSchf.fillSchf(1, 2);
                         break;
                     case 3:
-                        PajeObjSchf.fillSchfMin(3);
+                        PajeObjSchf.fillSchf(1, 3);
                         break;
                 }
                 break;
             case 2:
                 switch (function) {
                     case 1:
-                        PajeObjSchf.fillSchfMin(1);
-                        PajeObjSchf.fillSchfMax(1);
+                        PajeObjSchf.fillSchf(2, 1);
                         break;
                     case 2:
-                        PajeObjSchf.fillSchfMin(2);
-                        PajeObjSchf.fillSchfMax(2);
+                        PajeObjSchf.fillSchf(2, 2);
                         break;
                     case 3:
-                        PajeObjSchf.fillSchfMin(3);
-                        PajeObjSchf.fillSchfMax(3);
+                        PajeObjSchf.fillSchf(2, 3);
                         break;
                 }
                 break;

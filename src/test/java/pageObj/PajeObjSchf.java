@@ -36,7 +36,7 @@ public class PajeObjSchf {
     static SelenideElement stuka = $(new Selectors.ByText("796 шт."));
     static SelenideElement kolTovara = $(By.name("countProduct"));
     static SelenideElement priceNds = $(By.name("priceWithNDS"));
-    static SelenideElement sasvingCargo = $(new Selectors.ByText("Сохранить"));
+    static SelenideElement savingCargo = $(new Selectors.ByText("Сохранить"));
     static SelenideElement saveAndExit = $(new Selectors.ByText("Сохранить и закрыть"));
     static SelenideElement submitExit = $(new Selectors.ByText("Документ успешно сохранен!"));
     static SelenideElement submitOk = $(new Selectors.ByText("OK"));
@@ -56,7 +56,7 @@ public class PajeObjSchf {
     static SelenideElement valDop = $(By.name("document.documentInfo.dopInfoHozLive.nameCurrent"));
     static SelenideElement valKourse = $(By.name("document.documentInfo.dopInfoHozLive.courseCurrent"));
     static ElementsCollection checkBoxes = $$(By.name("isTextInfo"));
-    static SelenideElement idInfoPole1 = $(By.name("document.documentInfo.infoFieldHozLive.idFileInfoField.x-form-focus"));
+    static SelenideElement idInfoPole1 = $(By.name("document.documentInfo.infoFieldHozLive.idFileInfoField"));
     static ElementsCollection unselIditif = $$(".x-grid3-cell-inner.x-grid3-col-CODE.x-unselectable");
     static ElementsCollection znachUnsel = $$(".x-grid3-cell-inner.x-grid3-col-VALUE.x-unselectable");
     static SelenideElement znachZnach = $(".x-form-textarea.x-form-field.textarea-n-style.x-form-focus");
@@ -66,13 +66,26 @@ public class PajeObjSchf {
     static SelenideElement textInputField = $(".x-form-text.textfield-n-style.x-form-focus");
     static SelenideElement nomDocOsn = $(".x-grid3-col.x-grid3-cell.x-grid3-td-number");
     static SelenideElement dateDocOsn = $(".x-grid3-col.x-grid3-cell.x-grid3-td-date");
-    static SelenideElement dopSvedOsn = $(".x-grid3-col x-grid3-cell.x-grid3-td-info.x-grid3-cell-last");
+    static SelenideElement dopSvedOsn = $(".x-grid3-col.x-grid3-cell.x-grid3-td-info.x-grid3-cell-last");
     static SelenideElement nomTranNakl = $(".x-grid3-col.x-grid3-cell.x-grid3-td-numberInvoice");
-    static SelenideElement naklCalen = $(".x-grid3-cell-inner.x-grid3-col-dateInvoice x-unselectable");
+    static SelenideElement naklCalen = $(".x-grid3-cell-inner.x-grid3-col-dateInvoice.x-unselectable");
     static SelenideElement svedTransp = $(By.name("document.infoHozLive.infoHoz.transportCargo.infoCargo"));
     static SelenideElement svedPeredach = $(By.name("document.infoHozLive.infoHoz.infoTransferItem.infoTransfer"));
     static SelenideElement infoFhz3 = $(By.name("isTextInfo3"));
     static SelenideElement getIdInfoPole3 = $(By.name("document.infoHozLive.infoFieldHozLive.idFileInfoField"));
+    static SelenideElement korrectirovka = $(By.name("CORRECT"));
+    static SelenideElement korrNumber = $(By.name("document.documentInfo.correctSf.numberCorSf"));
+    static SelenideElement priznak = $(By.name("dopInfoProduct.type"));
+    static SelenideElement dopInfoPr = $(By.name("dopInfoProduct.dopInfoType"));
+    static SelenideElement charakter = $(By.name("dopInfoProduct.codeTov"));
+    static SelenideElement akcizSumm = $(By.name("excise.tax"));
+    static SelenideElement kolvoOtpust = $(By.name("dopInfoProduct.contSend"));
+    static SelenideElement korrDebet = $(By.name("dopInfoProduct.debet"));
+    static SelenideElement korrKredit = $(By.name("dopInfoProduct.credit"));
+    static SelenideElement country = $(".x-grid3-cell-inner.x-grid3-col-codeCountry.x-unselectable");
+    static SelenideElement countryEnter = $(".x-form-text.combo-n-style.x-form-focus");
+    static SelenideElement tamozhNom = $(".x-grid3-cell-inner.x-grid3-col-numberTamozhDeclaration.x-unselectable");
+    static SelenideElement textPoleInput = $(".x-form-text.x-form-field.x-form-focus");
 
 
     public static void fillSchf(int minMax, int function) {
@@ -99,7 +112,6 @@ public class PajeObjSchf {
         if (function != 1) {
             soderOper.setValue("АВТО Содержание операции");
         }
-
         if (minMax == 2) {
             osnovSostavit.setValue("АВТО основание по которому эконсубъект является");
             getOnzheGruzoPoluch.click();
@@ -124,7 +136,7 @@ public class PajeObjSchf {
             $$(checkBoxes).get(0).click();
             idInfoPole1.setValue("111112222222333333333333444444444444");
             $$(unselIditif).get(0).click();
-            $$(".x-layer x-editor.x-small-editor.x-grid-editor").get(2).$(".x-form-text.x-form-field.x-form-focus").setValue("АВТО ИНДЕТИФИКАТОР");
+            $$(".x-layer.x-editor.x-small-editor.x-grid-editor").get(2);(textPoleInput).setValue("АВТО ИНДЕТИФИКАТОР");
             $$(znachUnsel).get(0).doubleClick();
             znachZnach.setValue("АВТО значение идентификатора информационного поля факта хозяйственной жизни 1");
             check3fhzh.click();
@@ -163,9 +175,13 @@ public class PajeObjSchf {
             infoFhz3.click();
             getIdInfoPole3.setValue("111112222222333333333333444444444444");
             $$(unselIditif).get(1).click();
-            textInputField.setValue("АВТО Идетификатор ФХЖ 3");
+            textPoleInput.setValue("АВТО Идетификатор ФХЖ 3");
             $$(znachUnsel).get(1).doubleClick();
             znachZnach.setValue("АВТО значение идентификатора ФХЖ 3");
+            korrectirovka.click();
+            korrNumber.setValue("1");
+            $$(calend).get(1).click();
+            $$(dateDate).get(5).click();
         }
 
         fillTable(minMax);
@@ -186,11 +202,31 @@ public class PajeObjSchf {
         kolTovara.setValue("256");
         priceNds.clear();
         priceNds.setValue("250489.65");
-        sasvingCargo.click();
-
         if (minMax == 2) {
-
+            priznak.setValue("тов");
+            $(new Selectors.ByText("Товар")).isDisplayed();
+            $(new Selectors.ByText("Товар")).click();
+            dopInfoPr.setValue("001");
+            charakter.setValue("АВТО характеристика и код торвара");
+            akcizSumm.clear();
+            akcizSumm.setValue("10489.65");
+            kolvoOtpust.setValue("103");
+            korrDebet.setValue("111222333");
+            korrKredit.setValue("333222111");
+            country.click();
+            countryEnter.setValue("нор");
+            $(new Selectors.ByText("578 НОРВЕГИЯ")).isDisplayed();
+            $(new Selectors.ByText("578 НОРВЕГИЯ")).click();
+            tamozhNom.click();
+            textPoleInput.setValue("АВТО номер там.декл. 110");
+            akcizSumm.click();
+            $$(unselIditif).last().doubleClick();
+            textPoleInput.setValue("АВТО Идентификатор ФХЖ 2");
+            $$(znachUnsel).get(2).click();
+            znachZnach.setValue("АВТО значение идентификатора ФХЖ 2");
+            akcizSumm.click();
         }
+        savingCargo.click();
     }
 
     public static void podpisant() {

@@ -24,14 +24,18 @@ public class Creating {
     }
 
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void createSChfMin() {
         PageObjMane.schfCreat(1, 1);
+        PageObjMane.schfCreat(1, 2);
+        PageObjMane.schfCreat(1, 3);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void createSChfMax() {
         PageObjMane.schfCreat(2, 1);
+        PageObjMane.schfCreat(2, 2);
+        PageObjMane.schfCreat(2, 3);
     }
 
     @AfterTest

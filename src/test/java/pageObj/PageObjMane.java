@@ -5,6 +5,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.sun.xml.internal.ws.client.sei.ResponseBuilder;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -18,6 +19,39 @@ public class PageObjMane {
     static SelenideElement newDoc = $(new Selectors.ByText("Новый документ"));
     static ElementsCollection docList = $$(".x-menu-list .x-menu-list-item");
 
+    public static void kschfCreate(int minMax, int function) {
+        newDoc.click();
+        $$(docList).get(3).click();
+        switch (minMax) {
+            case 1:
+                switch (function) {
+                    case 1:
+                        PageObgKschf.fillKschf(1, 4);
+                        break;
+                    case 2:
+                        PageObgKschf.fillKschf(1, 5);
+                        break;
+                    case 3:
+                        PageObgKschf.fillKschf(1, 6);
+                        break;
+                }
+                break;
+            case 2:
+                switch (function) {
+                    case 1:
+                        PageObgKschf.fillKschf(2, 4);
+                        break;
+                    case 2:
+                        PageObgKschf.fillKschf(2, 5);
+                        break;
+                    case 3:
+                        PageObgKschf.fillKschf(2, 6);
+                        break;
+                }
+                break;
+
+        }
+    }
 
     public static void schfCreat(int minMax, int function) {
         newDoc.click();

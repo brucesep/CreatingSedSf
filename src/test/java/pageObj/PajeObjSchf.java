@@ -36,8 +36,7 @@ public class PajeObjSchf {
     static SelenideElement stuka = $(new Selectors.ByText("796 шт."));
     static SelenideElement kolTovara = $(By.name("countProduct"));
     static SelenideElement priceNds = $(By.name("priceWithNDS"));
-    static SelenideElement savingCargo = $(new Selectors.ByText("Сохранить"));
-    static SelenideElement saveAndExit = $(new Selectors.ByText("Сохранить и закрыть"));
+    static ElementsCollection savingCargo = $$(new Selectors.ByText("Сохранить"));
     static SelenideElement submitExit = $(new Selectors.ByText("Документ успешно сохранен!"));
     static SelenideElement submitOk = $(new Selectors.ByText("OK"));
     //Для максимального заполнения
@@ -86,9 +85,11 @@ public class PajeObjSchf {
     static SelenideElement countryEnter = $(".x-form-text.combo-n-style.x-form-focus");
     static SelenideElement tamozhNom = $(".x-grid3-cell-inner.x-grid3-col-numberTamozhDeclaration.x-unselectable");
     static SelenideElement textPoleInput = $(".x-form-text.x-form-field.x-form-focus");
+    static ElementsCollection closeAndSave = $$(".x-tool.x-tool-close");
 
 
     public static void fillSchf(int minMax, int function) {
+
         chooseFunction(function);
         String nomerr;
         if (minMax == 1) {
@@ -117,10 +118,12 @@ public class PajeObjSchf {
             getOnzheGruzoPoluch.click();
             $$(chooseMassive).get(1).click();
             waitinTableLoaded.isDisplayed();
+            firstPoluch.isDisplayed();
             firstPoluch.click();
             choiseButton.click();
             $$(chooseMassive).get(2).click();
             waitinTableLoaded.isDisplayed();
+            secondPoluch.isDisplayed();
             secondPoluch.click();
             choiseButton.click();
             $$(platDoc).get(0).$(".x-grid3-cell-inner.x-grid3-col-1.x-unselectable").click();
@@ -166,6 +169,7 @@ public class PajeObjSchf {
             $$(dateDate).get(3).click();
             $$(chooseMassive).get(4).click();
             waitinTableLoaded.isDisplayed();
+            $(new Selectors.ByText("Фамилиев")).isDisplayed();
             $(new Selectors.ByText("Фамилиев")).click();
             choiseButton.click();
             svedTransp.setValue("АВТО сведения о транспортировке и грузе");
@@ -186,14 +190,16 @@ public class PajeObjSchf {
 
         fillTable(minMax);
 
-        saveAndExit.click();
-        submitExit.isDisplayed();
+        $$(closeAndSave).get(1).click();
+        $(new Selectors.ByText("Сохранить изменения перед закрытием?")).isDisplayed();
+        $(new Selectors.ByText("Да")).click();
         submitOk.click();
     }
 
     public static void fillTable(int minMax) {
         mainTable.doubleClick();
         autoCount.click();
+        nameProduct.click();
         nameProduct.setValue("АВТО наименование товара 1");
         okei.setValue("шт").click();
         stuka.isDisplayed();
@@ -226,7 +232,7 @@ public class PajeObjSchf {
             znachZnach.setValue("АВТО значение идентификатора ФХЖ 2");
             akcizSumm.click();
         }
-        savingCargo.click();
+        $$(savingCargo).get(1).click();
     }
 
     public static void podpisant() {
@@ -235,17 +241,17 @@ public class PajeObjSchf {
         choiseButton.click();
     }
 
-    public static void chooseFunction(int funct) {
+    public static void chooseFunction(int function) {
         chooseFunct.click();
-        switch (funct) {
+        switch (function) {
             case 1:
-                $$(functionList).findBy(Condition.text("счет-фактура, применяемый при расчетах по налогу на добавленную стоимость")).click();
+                $$(functionList).get(0).click();
                 break;
             case 2:
-                $$(functionList).findBy(Condition.text("счет-фактура, применяемый при расчетах по налогу на добавленную стоимость, и документ об отгрузке товаров (выполнении работ), передаче имущественных прав (документ об оказании услуг)")).click();
+                $$(functionList).get(1).click();
                 break;
             case 3:
-                $$(functionList).findBy(Condition.text("документ об отгрузке товаров (выполнении работ), передаче имущественных прав (документ об оказании услуг)")).click();
+                $$(functionList).get(2).click();
                 break;
         }
 

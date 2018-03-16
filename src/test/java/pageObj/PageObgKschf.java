@@ -79,28 +79,28 @@ public class PageObgKschf {
         tableEntering.doubleClick();
         autoCount.click();
         naimeProd.click();
-        naimeProd.setValue("АВТО Наименование продукта");
-        stoimSnalogDo.setValue("256400.11");
-        stoimSnalogPosle.setValue("342964.25");
+        naimeProd.sendKeys("АВТО Наименование продукта");
+        stoimSnalogDo.sendKeys("256400.11");
+        stoimSnalogPosle.sendKeys("342964.25");
         if (minMax == 2) {
-            okeiBefore.setValue("шт");
+            okeiBefore.sendKeys("шт");
             stuka.get(0).isDisplayed();
             stuka.get(0).click();
-            okeiAfter.setValue("шт");
+            okeiAfter.sendKeys("шт");
             stuka.get(1).isDisplayed();
             stuka.get(1).click();
             kolvoBefor.clear();
-            kolvoBefor.setValue("142.11");
+            kolvoBefor.sendKeys("142.11");
             kolvoAfter.clear();
-            kolvoAfter.setValue("156.5");
-            akcizDo.setValue("456.35");
-            akcizAfter.setValue("512.78");
-            korrDebet.setValue("123456789");
-            korrKredit.setValue("987654321");
+            kolvoAfter.sendKeys("156.5");
+            akcizDo.sendKeys("456.35");
+            akcizAfter.sendKeys("512.78");
+            korrDebet.sendKeys("123456789");
+            korrKredit.sendKeys("987654321");
             infoFhz2.get(1).click();
-            enterTextToPole.setValue("АВТО идентификатор ФХЖ 2");
+            enterTextToPole.sendKeys("АВТО идентификатор ФХЖ 2");
             znachFhz2.get(1).doubleClick();
-            enterTextToArea.setValue("АВТО значение идентификатора ФХЖ 2");
+            enterTextToArea.sendKeys("АВТО значение идентификатора ФХЖ 2");
         }
         saveTable.get(1).click();
     }
@@ -114,21 +114,21 @@ public class PageObgKschf {
         } else {
             nomer = "MAX";
         }
-        docnNum.setValue("АВТО: " + nomer +" " + function + function + function + " " + HelpMeth.randomCount());
+        docnNum.sendKeys("АВТО: " + nomer +" " + function + function + function + " " + HelpMeth.randomCount());
         choose.click();
         $(new Selectors.ByText("576771279")).isDisplayed();
         $(new Selectors.ByText("576771279")).click();
         submitButton.click();
-        valutaFirst.setValue("рос");
+        valutaFirst.sendKeys("рос");
         rosRub.get(0).isDisplayed();
         rosRub.get(0).click();
-        valutaSecond.setValue("рос");
+        valutaSecond.sendKeys("рос");
         rosRub.get(1).isDisplayed();
         rosRub.get(1).click();
-        rekvizPere.setValue("АВТО реквизиты передаточных документов");
-        soderOperacii.setValue("АВТО содержание операции");
+        rekvizPere.sendKeys("АВТО реквизиты передаточных документов");
+        soderOperacii.sendKeys("АВТО содержание операции");
         nomSchf.doubleClick();
-        nomSchff.setValue("АВТО 10/110");
+        nomSchff.sendKeys("АВТО 10/110");
         calendar.get(2).click();
         date.get(0).click();
         if (minMax == 2){
@@ -141,29 +141,27 @@ public class PageObgKschf {
         saveMassive.get(1).click();
 
         if (minMax == 2){
-            osnovanie.setValue("АВТО Основание составителя");
-
-
-            idGosKon.setValue("АВТО ид госконтракта");
-            kursVal.setValue("12.11");
+            osnovanie.sendKeys("АВТО Основание составителя");
+            idGosKon.sendKeys("АВТО ид госконтракта");
+            kursVal.sendKeys("12.11");
             infFhz1.click();
-            idInfoPole.setValue("111112222222333333333333444444444444");
+            idInfoPole.sendKeys("111112222222333333333333444444444444");
             identiF.click();
-            enterTextToPole.setValue("АВТО идентификатор ФХЖ 1");
+            enterTextToPole.sendKeys("АВТО идентификатор ФХЖ 1");
             znachF.doubleClick();
-            enterTextToArea.setValue("АВТО значение идентификатора ФХЖ 1");
-            inieSved.setValue("АВТО иные сведения об измении стоимости");
+            enterTextToArea.sendKeys("АВТО значение идентификатора ФХЖ 1");
+            inieSved.sendKeys("АВТО иные сведения об измении стоимости");
             calendar.get(1).click();
             date.get(0).click();
             naimDocOsn.click();
-            textAnother.setValue("АВТО наименование документа основания");
+            textAnother.sendKeys("АВТО наименование документа основания");
             nomDocOsn.click();
-            textAnother.setValue("110/200");
+            textAnother.sendKeys("110/200");
             dateDocOsn.doubleClick();
             calendar.get(2).click();
             date.get(1).click();
             dopSved.click();
-            enterTextToArea.setValue("АВТО дополнительные сведения о документе-основании");
+            enterTextToArea.sendKeys("АВТО дополнительные сведения о документе-основании");
             ispavlenie.click();
             ispKschf.setValue("2");
             $$(".x-form-trigger.triger-date-n-style").get(1).click();

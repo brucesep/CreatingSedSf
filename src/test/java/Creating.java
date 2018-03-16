@@ -28,8 +28,8 @@ public class Creating {
     @Test(enabled = false)
     public void createSChfMin() {
         PageObjMane.schfCreat(1, 1);
-        PageObjMane.schfCreat(1, 2);
-        PageObjMane.schfCreat(1, 3);
+//        PageObjMane.schfCreat(1, 2);
+//        PageObjMane.schfCreat(1, 3);
     }
 
     @Test(enabled = false)
@@ -39,10 +39,10 @@ public class Creating {
         PageObjMane.schfCreat(2, 3);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void createKschfMin(){
-//        PageObjMane.kschfCreate(1,1);
-//        PageObjMane.kschfCreate(1,2);
+        PageObjMane.kschfCreate(1,1);
+        PageObjMane.kschfCreate(1,2);
         PageObjMane.kschfCreate(1,3);
     }
 
@@ -51,6 +51,12 @@ public class Creating {
         PageObjMane.kschfCreate(2,1);
         PageObjMane.kschfCreate(2,2);
         PageObjMane.kschfCreate(2,3);
+    }
+
+    @Test (enabled = true)
+    public void createPereTov(){
+        //PageObjMane.tovarCreate(1);
+        PageObjMane.tovarCreate(2);
     }
 
     @AfterTest

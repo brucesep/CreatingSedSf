@@ -19,6 +19,19 @@ public class PageObjMane {
     static SelenideElement newDoc = $(new Selectors.ByText("Новый документ"));
     static ElementsCollection docList = $$(".x-menu-list .x-menu-list-item");
 
+    public static void  rezRabCreate(int minMax) {
+        newDoc.click();
+        $$(docList).get(1).click();
+        switch (minMax){
+            case 1:
+                PageObjRab.fillPerRab(1);
+                break;
+            case 2:
+                PageObjRab.fillPerRab(2);
+                break;
+        }
+    }
+
     public static void tovarCreate(int minMax){
         newDoc.click();
         $$(docList).get(2).click();

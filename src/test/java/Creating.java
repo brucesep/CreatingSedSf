@@ -53,10 +53,16 @@ public class Creating {
         PageObjMane.kschfCreate(2,3);
     }
 
-    @Test (enabled = true)
+    @Test (enabled = false)
     public void createPereTov(){
-        //PageObjMane.tovarCreate(1);
+        PageObjMane.tovarCreate(1);
         PageObjMane.tovarCreate(2);
+    }
+
+    @Test (enabled = true)
+    public void createPereRab(){
+        //PageObjMane.rezRabCreate(1);
+        PageObjMane.rezRabCreate(2);
     }
 
     @AfterTest

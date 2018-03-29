@@ -28,6 +28,7 @@ public class HelpMeth {
     }
 
     public static void logOut(){
+        $(new Selectors.ByText("Выход")).isDisplayed();
         $(new Selectors.ByText("Выход")).click();
         $(new Selectors.ByText("OK")).click();
     }

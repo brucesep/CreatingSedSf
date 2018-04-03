@@ -16,7 +16,9 @@ public class HelpMeth {
     }
 
     public static void logIn(String loginName, String passWord) {
+        $(By.id("login")).clear();
         $(By.id("login")).setValue(loginName);
+        $(By.id("password")).clear();
         $(By.id("password")).setValue(passWord);
         $(By.id("loginBtn")).click();
         //если был некорректный разлогин

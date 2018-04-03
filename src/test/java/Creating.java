@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import helping.HelpMeth;
 import org.testng.annotations.*;
 import pageObj.PageObjMane;
@@ -69,4 +70,10 @@ public class Creating {
     public void tearDown() {
         HelpMeth.logOut();
     }
+
+//    @AfterClass (alwaysRun = true)
+//    public void closeWebDriver(){
+//        WebDriverRunner.closeWebDriver();
+//    }
 }
+

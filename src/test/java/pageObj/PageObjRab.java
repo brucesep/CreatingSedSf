@@ -1,5 +1,6 @@
 package pageObj;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
@@ -68,8 +69,9 @@ public class PageObjRab {
         $$(calendar).get(4).click();
         $$(firstDate).last().$$(".x-date-active").last().click();
         $(new Selectors.ByText("18%")).doubleClick();
-        autoCount.isDisplayed();
-        autoCount.click();
+//        autoCount.isDisplayed();
+//        autoCount.click();
+        $$(".x-form-checkbox.x-form-field").get(3).click();
         nameWork.sendKeys("АВТО наименование услуг");
         okei.sendKeys("шт");
         okeiSt.isDisplayed();
@@ -78,15 +80,15 @@ public class PageObjRab {
         kolvo.sendKeys("11.4");
         priceNDS.clear();
         priceNDS.sendKeys("9764.16");
-        if (minMax == 2){
+        if (minMax == 2) {
             textInfo.sendKeys("АВТО текстовое описание выполненных работ");
             debet.sendKeys("123456789");
             kredit.sendKeys("987654321");
             $$(idFhz).last().click();
             enterTextString.sendKeys("АВТО идентификатор инфополя описания");
             $$(znazhFhz).last().doubleClick();
-            enterTextArea.sendKeys("АВТО значение индетификатора инфополя описания выполненных работ (оказанных услуг");
-            okeiSt.click();
+            enterTextArea.sendKeys("АВТО значение индетификатора инфополя описания выполненных работ (оказанных услуг).");
+            $$(idFhz).last().click();
         }
         $$(saveTableOne).get(1).click();
         $$(miniOk).last().click();
@@ -105,6 +107,8 @@ public class PageObjRab {
         currency.sendKeys("евр");
         $(new Selectors.ByText("978 Евро")).isDisplayed();
         $(new Selectors.ByText("978 Евро")).click();
+        podpisant();
+        fillTable(minMax);
         if (minMax == 2) {
             osnEcon.sendKeys("АВТО основание эконсубъекта");
             zagSod.sendKeys("АВТО заголовок содержания операции");
@@ -121,11 +125,12 @@ public class PageObjRab {
             $$(dateDate).last().click();
             dopSvedOsn.doubleClick();
             enterTextArea.sendKeys("АВТО дополнительные сведения по документу основанию");
+            idGosKont.click();
             idGosKont.sendKeys("АВТО ид. госконтракта");
             course.sendKeys("60.12");
             vidOper.sendKeys("АВТО вид операции");
             fhZh1.click();
-            idFileFhzh1.sendKeys("11111111111111122222222222222233333");
+            idFileFhzh1.sendKeys("111111111111222222222222333333333333");
             $$(idFhz).get(0).click();
             enterTextString.sendKeys("АВТО идентификатор ФХЖ1");
             $$(znazhFhz).get(0).doubleClick();
@@ -134,6 +139,7 @@ public class PageObjRab {
             $$(dateDate).last().click();
             $$(calendar).get(4).click();
             $$(dateDate).last().click();
+            svedPeredach.click();
             svedPeredach.sendKeys("АВТО сведения о передаче");
             infoFhzh2.click();
             $$(idFhz).get(1).click();
@@ -141,20 +147,14 @@ public class PageObjRab {
             $$(znazhFhz).get(1).click();
             enterTextArea.sendKeys("АВТО значение идентификатора ФХЖ2");
         }
-        podpisant();
-        fillTable(minMax);
 
         $$(closeAndSave).get(1).click();
         $(new Selectors.ByText("Сохранить изменения перед закрытием?")).isDisplayed();
         $(new Selectors.ByText("Да")).click();
-        $(new Selectors.ByText("Документ успешно сохранен!")).isDisplayed();
+        $(new Selectors.ByText("Документ успешно сохранен!")).waitUntil(Condition.appear, 10000).isDisplayed();
         $(new Selectors.ByText("OK")).click();
 
     }
-
-
-
-
 
     public static void podpisant() {
         podpisOp.doubleClick();
@@ -162,7 +162,4 @@ public class PageObjRab {
         samPodpisant.click();
         submitChoise.click();
     }
-
-
-
 }

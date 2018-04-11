@@ -60,10 +60,16 @@ public class Creating {
         PageObjMane.tovarCreate(2);
     }
 
-    @Test (enabled = true)
+    @Test (enabled = false)
     public void createPereRab(){
-        //PageObjMane.rezRabCreate(1);
+        PageObjMane.rezRabCreate(1);
         PageObjMane.rezRabCreate(2);
+    }
+
+    @Test (enabled = true)
+    public void createUzal(){
+        //PageObjMane.uzalDocCreate(1);
+        PageObjMane.uzalDocCreate(2);
     }
 
     @AfterTest

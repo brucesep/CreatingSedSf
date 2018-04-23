@@ -1,10 +1,9 @@
 package pageObj;
 
-import com.codeborne.selenide.Condition;
+
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import helping.HelpMeth;
 import org.openqa.selenium.By;
 

@@ -3,13 +3,11 @@ package pageObj;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.sun.xml.internal.ws.client.sei.ResponseBuilder;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.switchTo;
+
 
 /**
  * Created by alexeya on 14.02.2018.

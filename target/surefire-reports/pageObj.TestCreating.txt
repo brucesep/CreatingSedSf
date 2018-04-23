@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: pageObj.TestCreating
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 3, Time elapsed: 0.407 s <<< FAILURE! - in pageObj.TestCreating
+setupTest(pageObj.TestCreating)  Time elapsed: 0.28 s  <<< FAILURE!
+java.lang.NoSuchMethodError: io.github.bonigarcia.wdm.FirefoxDriverManager.getInstance()Lio/github/bonigarcia/wdm/BrowserManager;
+	at pageObj.TestCreating.setupTest(TestCreating.java:38)
+

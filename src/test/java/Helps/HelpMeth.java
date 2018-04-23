@@ -1,4 +1,4 @@
-package helping;
+package Helps;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
@@ -19,7 +19,9 @@ public class HelpMeth {
 
 
     public static void openPage(String link) {
-         open(link);
+        Configuration.browser = "chrome";
+        System.setProperty("webdriver.chrome.driver", "D:/JAVA/webdrvs/chromedriver.exe");
+        open(link);
     }
 
     public static void logIn(String loginName, String passWord) {
@@ -40,8 +42,6 @@ public class HelpMeth {
         $(new Selectors.ByText("Выход")).isDisplayed();
         $(new Selectors.ByText("Выход")).click();
         $(new Selectors.ByText("OK")).click();
-        WebDriverRunner.closeWebDriver();
-        closeWebDriver();
             }
 
     public static int randomCount(){

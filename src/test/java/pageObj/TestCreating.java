@@ -1,13 +1,10 @@
 package pageObj;
 
+import Helps.HelpMeth;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
-import helping.HelpMeth;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-import pageObj.PageObjMane;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -15,17 +12,8 @@ import static com.codeborne.selenide.Selenide.$;
  * Created by alexeya on 07.02.2018.
  */
 
-public class TestCreating {
+public class TestCreating  {
 
-    protected WebDriver driver;
-
-    @BeforeClass
-//    public static void setUp() {
-////        System.setProperty("webdriver.chrome.driver", "D:\\JAVA\\webdrvs\\chromedriver.exe");
-////        Configuration.browser="chrome";
-//
-//        ChromeDriverManager.getInstance().setup();
-//    }
 
 
     @BeforeTest
@@ -35,8 +23,7 @@ public class TestCreating {
         Configuration.savePageSource = false;
         Configuration.screenshots = false;
 
-        Configuration.browser = "chrome";
-        System.setProperty("webdriver.chrome.driver", "D:/JAVA/webdrvs/chromedriver.exe");
+
 
         HelpMeth.openPage("http://sf2abukk.comita.lan:8080/ccwe/");
         HelpMeth.logIn("GreyKnights", "gfhjkmnhb");

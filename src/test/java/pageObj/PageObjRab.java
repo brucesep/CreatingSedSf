@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
-import helping.HelpMeth;
+import Helps.HelpMeth;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;

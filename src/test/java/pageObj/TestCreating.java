@@ -35,6 +35,9 @@ public class TestCreating {
         Configuration.savePageSource = false;
         Configuration.screenshots = false;
 
+        Configuration.browser = "chrome";
+        System.setProperty("webdriver.chrome.driver", "D:/JAVA/webdrvs/chromedriver.exe");
+
         HelpMeth.openPage("http://sf2abukk.comita.lan:8080/ccwe/");
         HelpMeth.logIn("GreyKnights", "gfhjkmnhb");
     }
@@ -43,8 +46,8 @@ public class TestCreating {
     @Test(enabled = false)
     public void createSChfMin() {
         PageObjMane.schfCreat(1, 1);
-//        PageObjMane.schfCreat(1, 2);
-//        PageObjMane.schfCreat(1, 3);
+        PageObjMane.schfCreat(1, 2);
+        PageObjMane.schfCreat(1, 3);
     }
 
     @Test(enabled = false)

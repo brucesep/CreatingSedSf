@@ -1,18 +1,25 @@
 package helping;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.Selenide.*;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 
 /**
  * Created by alexeya on 07.02.2018.
  */
 public class HelpMeth {
 
+
     public static void openPage(String link) {
-        open(link);
+         open(link);
     }
 
     public static void logIn(String loginName, String passWord) {
@@ -33,7 +40,9 @@ public class HelpMeth {
         $(new Selectors.ByText("Выход")).isDisplayed();
         $(new Selectors.ByText("Выход")).click();
         $(new Selectors.ByText("OK")).click();
-    }
+        WebDriverRunner.closeWebDriver();
+        closeWebDriver();
+            }
 
     public static int randomCount(){
         int max = 999;
